@@ -12,9 +12,11 @@
 		3F3BA6321F09B84800E29319 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F3BA6301F09B84800E29319 /* Main.storyboard */; };
 		3F3BA6341F09B84800E29319 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3F3BA6331F09B84800E29319 /* Assets.xcassets */; };
 		3F3BA6371F09B84800E29319 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F3BA6351F09B84800E29319 /* LaunchScreen.storyboard */; };
+		E39A1FBD8CDE3639D5F209E2 /* Pods_WarbyParkerStores.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BB69F95FA502E920C7EEFA40 /* Pods_WarbyParkerStores.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		20C178F98B769996F7826CDC /* Pods-WarbyParkerStores.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WarbyParkerStores.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WarbyParkerStores/Pods-WarbyParkerStores.debug.xcconfig"; sourceTree = "<group>"; };
 		3F3BA6291F09B84700E29319 /* WarbyParkerStores.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WarbyParkerStores.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3F3BA62C1F09B84800E29319 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3F3BA62E1F09B84800E29319 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -22,6 +24,8 @@
 		3F3BA6331F09B84800E29319 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3F3BA6361F09B84800E29319 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3F3BA6381F09B84800E29319 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BB69F95FA502E920C7EEFA40 /* Pods_WarbyParkerStores.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WarbyParkerStores.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C3C12AAE9B74B211551B9406 /* Pods-WarbyParkerStores.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WarbyParkerStores.release.xcconfig"; path = "Pods/Target Support Files/Pods-WarbyParkerStores/Pods-WarbyParkerStores.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,6 +33,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E39A1FBD8CDE3639D5F209E2 /* Pods_WarbyParkerStores.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -40,6 +45,8 @@
 			children = (
 				3F3BA62B1F09B84700E29319 /* WarbyParkerStores */,
 				3F3BA62A1F09B84700E29319 /* Products */,
+				BDD7193CF875C488D3FA98E9 /* Pods */,
+				EE70516F51CEE4094F37559A /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -64,6 +71,23 @@
 			path = WarbyParkerStores;
 			sourceTree = "<group>";
 		};
+		BDD7193CF875C488D3FA98E9 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				20C178F98B769996F7826CDC /* Pods-WarbyParkerStores.debug.xcconfig */,
+				C3C12AAE9B74B211551B9406 /* Pods-WarbyParkerStores.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		EE70516F51CEE4094F37559A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				BB69F95FA502E920C7EEFA40 /* Pods_WarbyParkerStores.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -71,9 +95,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 3F3BA63B1F09B84800E29319 /* Build configuration list for PBXNativeTarget "WarbyParkerStores" */;
 			buildPhases = (
+				27737020AC4EDF1D93692D05 /* [CP] Check Pods Manifest.lock */,
 				3F3BA6251F09B84700E29319 /* Sources */,
 				3F3BA6261F09B84700E29319 /* Frameworks */,
 				3F3BA6271F09B84700E29319 /* Resources */,
+				848E1E9DC8A2B416B7DD6F6C /* [CP] Embed Pods Frameworks */,
+				4CB4201E622A2EB7891D2B24 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -131,6 +158,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		27737020AC4EDF1D93692D05 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		4CB4201E622A2EB7891D2B24 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-WarbyParkerStores/Pods-WarbyParkerStores-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		848E1E9DC8A2B416B7DD6F6C /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-WarbyParkerStores/Pods-WarbyParkerStores-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		3F3BA6251F09B84700E29319 /* Sources */ = {
@@ -259,6 +334,7 @@
 		};
 		3F3BA63C1F09B84800E29319 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 20C178F98B769996F7826CDC /* Pods-WarbyParkerStores.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = H2562XJSGY;
@@ -272,6 +348,7 @@
 		};
 		3F3BA63D1F09B84800E29319 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C3C12AAE9B74B211551B9406 /* Pods-WarbyParkerStores.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = H2562XJSGY;
@@ -302,6 +379,7 @@
 				3F3BA63D1F09B84800E29319 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
