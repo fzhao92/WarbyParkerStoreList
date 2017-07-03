@@ -59,7 +59,7 @@ struct APIClient {
         }
     }
     
-    func downloadImage(forUrl url: String, completion: @escaping (UIImage?) -> Void) {
+    static func downloadImage(forUrl url: String, completion: @escaping (UIImage?) -> Void) {
         Alamofire.request(url).validate().responseImage { (response) in
             
             switch response.result {
@@ -68,6 +68,7 @@ struct APIClient {
                 completion(image)
                 
             case .failure(let error):
+                print(url)
                 print("Error downloading image: \(error.localizedDescription)")
                 completion(nil)
             }

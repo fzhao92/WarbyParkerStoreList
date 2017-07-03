@@ -16,6 +16,17 @@ struct StoreCellViewModel {
         storeModel = model
     }
     
+    var name: String {
+        return storeModel.name
+    }
     
+    var address: String {
+        let addressStr = "\(storeModel.address.streetAddress), \(storeModel.address.locality), \(storeModel.address.regionName), \(storeModel.address.countryCode)"
+        return addressStr
+    }
+    
+    var imageUrl: String {
+        return storeModel.cardPhotoUrl
+    }
     
 }

@@ -12,11 +12,9 @@ class StoreListViewViewModel {
     
     var reloadTableViewCallback: () -> Void
     var stores = [StoreModel]()
-    let numberOfSections = 1
+    private let numberOfSections = 1
     
-    var cellsLoaded: Int {
-        return stores.count
-    }
+    let title = "Warby Parker Stores"
     
     init(reloadTableViewCallback: @escaping () -> Void) {
         self.reloadTableViewCallback = reloadTableViewCallback
@@ -36,10 +34,16 @@ class StoreListViewViewModel {
         return stores.count
     }
     
+    func numberOfRowsInSection() -> Int {
+        return stores.count
+    }
+    
     func numberOfSectionsInTableView() -> Int {
         return numberOfSections
     }
     
-    // - TODO: function to return tableview cell model for particular index
+    func storeCellViewModel(forIndex index: Int) -> StoreCellViewModel {
+        return StoreCellViewModel(model: stores[index])
+    }
     
 }

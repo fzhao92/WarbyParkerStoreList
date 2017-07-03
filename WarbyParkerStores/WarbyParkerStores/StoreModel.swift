@@ -37,17 +37,29 @@ struct StoreModel {
     let address: Address
     let cardPhotoUrl: String
     let heroImageUrls: [String]
+    let description: String
+    let offersEyeExams: Bool
     
     init(dict: JSON) {
         name = dict["name"].stringValue
         address = Address(dict: dict["address"])
-        cardPhotoUrl = dict["cms_content"]["card_photo"].stringValue
+        cardPhotoUrl = "https:" + dict["cms_content"]["card_photo"].stringValue
         
         var urls = [String]()
         for json in dict["cms_content"]["opening_soon"]["hero"]["images"].arrayValue {
             urls.append(json["url"].stringValue)
         }
         heroImageUrls = urls
+        
+        description = dict["cms_content"]["description"].stringValue
+        
+        offersEyeExams = dict["offers_eye_exams"].boolValue
     }
     
+}
+
+extension StoreModel: Equatable { }
+
+func ==(lhs: StoreModel, rhs: StoreModel) -> Bool {
+    return lhs.cardPhotoUrl == rhs.cardPhotoUrl
 }

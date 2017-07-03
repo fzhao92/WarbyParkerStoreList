@@ -44,8 +44,9 @@ class StoreCell: UITableViewCell {
         
         contentView.addSubview(photoImageView)
         photoImageView.snp.makeConstraints { (make) in
-            make.top.leading.bottom.equalTo(contentView).offset(5)
-            make.width.equalTo(contentView).dividedBy(4)
+            make.top.leading.equalTo(contentView).offset(10)
+            make.bottom.equalTo(contentView.snp.bottom).offset(-10)
+            make.width.equalTo(photoImageView.snp.height)
         }
         
         contentView.addSubview(nameLabel)
@@ -57,11 +58,16 @@ class StoreCell: UITableViewCell {
         }
         
         contentView.addSubview(addressLabel)
-        contentView.snp.makeConstraints { (make) in
+        addressLabel.snp.makeConstraints { (make) in
             make.top.equalTo(nameLabel.snp.bottom).offset(10)
             make.leading.equalTo(photoImageView.snp.trailing).offset(10)
             make.trailing.equalTo(contentView).offset(-10)
-            make.bottom.equalTo(contentView).offset(10)
+            make.bottom.equalTo(contentView).offset(-10)
+        }
+        
+        contentView.addSubview(loadingIndicator)
+        loadingIndicator.snp.makeConstraints { (make) in
+            make.centerX.centerY.equalTo(photoImageView)
         }
         
     }
@@ -76,10 +82,11 @@ class StoreCell: UITableViewCell {
     }
     
     func configure(withViewModel viewModel: StoreCellViewModel) {
-        // - TODO: update labels' text with viewModel properties
+        nameLabel.text = viewModel.name
+        addressLabel.text = viewModel.address
     }
     
-    private func update(withImage image: UIImage?) {
+    func update(withImage image: UIImage?) {
         if let image = image {
             loadingIndicator.stopAnimating()
             photoImageView.image = image
