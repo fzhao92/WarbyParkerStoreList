@@ -32,9 +32,16 @@ enum WarbyParkerAPI: URLRequestConvertible {
     }
 }
 
-struct APIClient {
+class APIClient {
     
-    static func getListOfStores(completion: @escaping ([StoreModel]?) -> Void) {
+    static let shared = APIClient()
+    
+    private init() { }
+    
+    let imageDownloader = ImageDownloader()
+    
+    func getListOfStores(completion: @escaping ([StoreModel]?) -> Void) {
+        
         Alamofire.request(WarbyParkerAPI.StoreList).validate().responseJSON { (response) in
             
             switch response.result {
@@ -57,22 +64,24 @@ struct APIClient {
             }
             
         }
+        
     }
     
-    static func downloadImage(forUrl url: String, completion: @escaping (UIImage?) -> Void) {
-        Alamofire.request(url).validate().responseImage { (response) in
+    func downloadImage(forUrl url: String, completion: @escaping (UIImage?) -> Void) {
+        
+        let request = URLRequest(url: URL(string: url)!)
+        
+        imageDownloader.download(request) { (response) in
             
             switch response.result {
-                
             case .success(let image):
                 completion(image)
-                
             case .failure(let error):
-                print(url)
-                print("Error downloading image: \(error.localizedDescription)")
-                completion(nil)
+                print("Image download failed: \(error.localizedDescription)")
             }
+            
         }
+        
     }
     
 }

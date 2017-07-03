@@ -53,12 +53,11 @@ class StoreListViewController: UIViewController {
 extension StoreListViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        let storeCellViewModel = storeListViewModel.storeCellViewModel(forIndex: indexPath.row)
-        let storeCellIndex = storeListViewModel.stores.index(of: storeCellViewModel.storeModel)!
-        let storeCellIndexPath = IndexPath(row: storeCellIndex, section: 0)
         
-        APIClient.downloadImage(forUrl: storeCellViewModel.imageUrl) { (image) in
-            if let cell = tableView.cellForRow(at: storeCellIndexPath) as? StoreCell {
+        let storeCellViewModel = storeListViewModel.storeCellViewModel(forIndex: indexPath.row)
+        
+        APIClient.shared.downloadImage(forUrl: storeCellViewModel.imageUrl) { (image) in
+            if let cell = tableView.cellForRow(at: indexPath) as? StoreCell {
                 DispatchQueue.main.async {
                     cell.update(withImage: image)
                 }

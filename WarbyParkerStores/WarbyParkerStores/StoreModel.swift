@@ -58,9 +58,3 @@ struct StoreModel {
     }
     
 }
-
-extension StoreModel: Equatable { }
-
-func ==(lhs: StoreModel, rhs: StoreModel) -> Bool {
-    return lhs.cardPhotoUrl == rhs.cardPhotoUrl
-}

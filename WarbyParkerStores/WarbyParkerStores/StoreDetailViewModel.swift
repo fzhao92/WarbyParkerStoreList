@@ -34,7 +34,6 @@ struct StoreDetailViewModel {
         if let name = (Locale.current as NSLocale).displayName(forKey: .countryCode, value: storeModel.address.countryCode) {
             countryName = name
         } else {
-            //invalid country code
             countryName = storeModel.address.countryCode
         }
         

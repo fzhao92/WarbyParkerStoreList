@@ -21,6 +21,8 @@ class StoreCell: UITableViewCell {
     lazy var addressLabel: UILabel = {
         let label = UILabel()
         label.font = UIFont(name: "ArialRoundedMTBold", size: 15)
+        label.numberOfLines = 2
+        label.adjustsFontSizeToFitWidth = true
         label.minimumScaleFactor = 0.5
         label.textColor = .white
         label.backgroundColor = .clear
@@ -30,7 +32,8 @@ class StoreCell: UITableViewCell {
     lazy var nameLabel: UILabel = {
         let label = UILabel()
         label.font = UIFont(name: "ArialRoundedMTBold", size: 25)
-        label.numberOfLines = 0
+        label.numberOfLines = 2
+        label.adjustsFontSizeToFitWidth = true
         label.minimumScaleFactor = 0.5
         label.textColor = .white
         label.backgroundColor = .clear

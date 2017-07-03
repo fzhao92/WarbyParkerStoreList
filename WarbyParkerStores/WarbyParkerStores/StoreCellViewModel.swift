@@ -21,7 +21,6 @@ struct StoreCellViewModel {
     }
     
     var address: String {
-//        let addressStr = "\(storeModel.address.streetAddress), \(storeModel.address.locality), \(storeModel.address.regionName), \(storeModel.address.countryCode)"
         let addressStr = "\(storeModel.address.locality), \(storeModel.address.regionName)"
         return addressStr
     }
