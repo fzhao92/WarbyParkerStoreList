@@ -20,6 +20,7 @@ class StoreListViewController: UIViewController {
         tableView.register(StoreCell.self, forCellReuseIdentifier: reuseId)
         tableView.delegate = self
         tableView.dataSource = self
+        tableView.backgroundColor = .white
         return tableView
     }()
 
@@ -63,10 +64,27 @@ extension StoreListViewController: UITableViewDelegate {
                 }
             }
         }
+
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 150
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let storeCellViewModel = storeListViewModel.storeCellViewModel(forIndex: indexPath.row)
+        let storeDetailViewModel = StoreDetailViewModel(model: storeCellViewModel.storeModel)
+        
+        let detailVC = StoreDetailViewController()
+        detailVC.configure(withViewModel: storeDetailViewModel)
+        
+        guard let cell = tableView.cellForRow(at: indexPath) as? StoreCell else {
+            fatalError("Cell is nil!")
+        }
+        
+        cell.executeAnimation {
+            self.navigationController?.pushViewController(detailVC, animated: true)
+        }
     }
     
 }
@@ -87,6 +105,8 @@ extension StoreListViewController: UITableViewDataSource {
         }
         
         cell.configure(withViewModel: storeListViewModel.storeCellViewModel(forIndex: indexPath.row))
+        
+        cell.contentView.backgroundColor = .clear
         
         return cell
     }

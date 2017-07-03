@@ -13,20 +13,27 @@ class StoreCell: UITableViewCell {
     
     lazy var photoImageView: UIImageView = {
         let imageView = UIImageView()
-        imageView.backgroundColor = .blue
+        imageView.backgroundColor = .gray
         imageView.contentMode = .scaleToFill
         return imageView
     }()
     
     lazy var addressLabel: UILabel = {
         let label = UILabel()
-        label.backgroundColor = .red
+        label.font = UIFont(name: "ArialRoundedMTBold", size: 15)
+        label.minimumScaleFactor = 0.5
+        label.textColor = .white
+        label.backgroundColor = .clear
         return label
     }()
     
     lazy var nameLabel: UILabel = {
         let label = UILabel()
-        label.backgroundColor = .green
+        label.font = UIFont(name: "ArialRoundedMTBold", size: 25)
+        label.numberOfLines = 0
+        label.minimumScaleFactor = 0.5
+        label.textColor = .white
+        label.backgroundColor = .clear
         return label
     }()
     
@@ -37,10 +44,20 @@ class StoreCell: UITableViewCell {
         return indicator
     }()
     
+    lazy var opacityMask: UIView = {
+        let view = UIView()
+        view.backgroundColor = UIColor(red:0.15, green:0.65, blue:0.87, alpha:0.7)
+        view.isHidden = true
+        return view
+    }()
+    
+    var opacityMaskWidthConstraint: Constraint?
+    
     override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
-        backgroundColor = .white
+        self.selectionStyle = .none
+        backgroundColor = UIColor(red:0.15, green:0.65, blue:0.87, alpha:1.0)
         
         contentView.addSubview(photoImageView)
         photoImageView.snp.makeConstraints { (make) in
@@ -70,6 +87,12 @@ class StoreCell: UITableViewCell {
             make.centerX.centerY.equalTo(photoImageView)
         }
         
+        contentView.addSubview(opacityMask)
+        opacityMask.snp.makeConstraints { (make) in
+            make.top.bottom.leading.equalTo(contentView)
+            self.opacityMaskWidthConstraint = make.width.equalTo(0).constraint
+        }
+        
     }
     
     override func prepareForReuse() {
@@ -94,6 +117,25 @@ class StoreCell: UITableViewCell {
             loadingIndicator.startAnimating()
             photoImageView.image = nil
         }
+    }
+    
+    func executeAnimation(completion: @escaping () -> Void) {
+        opacityMask.isHidden = false
+        
+        if let widthConstraint = opacityMaskWidthConstraint {
+
+            widthConstraint.update(offset: contentView.frame.width)
+            
+            UIView.animate(withDuration: 0.8, animations: {
+                self.contentView.layoutIfNeeded()
+            }, completion: { (_) in
+                self.opacityMask.isHidden = true
+                self.opacityMaskWidthConstraint?.update(offset: 0)
+                completion()
+            })
+            
+        }
+        
     }
 
 }

@@ -20,13 +20,19 @@ class StoreDetailViewController: UIViewController {
     
     lazy var addressLabel: UILabel = {
         let label = UILabel()
-        label.backgroundColor = .red
+        label.textAlignment = .center
+        label.numberOfLines = 3
+        label.lineBreakMode = .byWordWrapping
+        label.backgroundColor = .clear
         return label
     }()
     
     lazy var descriptionLabel: UILabel = {
         let label = UILabel()
-        label.backgroundColor = .green
+        label.textAlignment = .center
+        label.numberOfLines = 0
+        label.lineBreakMode = .byWordWrapping
+        label.backgroundColor = .clear
         return label
     }()
     
@@ -39,11 +45,11 @@ class StoreDetailViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        view.backgroundColor = .white
         view.addSubview(heroImageView)
         heroImageView.snp.makeConstraints { (make) in
             make.centerX.equalToSuperview()
-            make.top.equalToSuperview().offset(100)
+            make.top.equalToSuperview().offset(150)
             make.width.equalToSuperview().dividedBy(2)
             make.height.equalTo(heroImageView.snp.width)
         }
@@ -53,15 +59,15 @@ class StoreDetailViewController: UIViewController {
             make.top.equalTo(heroImageView.snp.bottom).offset(50)
             make.leading.equalToSuperview().offset(20)
             make.trailing.equalToSuperview().offset(-20)
-            make.height.equalToSuperview().multipliedBy(0.15)
+            make.height.equalToSuperview().multipliedBy(0.10)
         }
         
         view.addSubview(descriptionLabel)
         descriptionLabel.snp.makeConstraints { (make) in
-            make.top.equalTo(addressLabel.snp.bottom).offset(50)
+            make.top.equalTo(addressLabel.snp.bottom).offset(20)
             make.leading.equalToSuperview().offset(20)
             make.trailing.equalToSuperview().offset(-20)
-            make.height.equalToSuperview().multipliedBy(0.3)
+            make.height.equalToSuperview().multipliedBy(0.2)
         }
         
         view.addSubview(loadingIndicator)
@@ -69,6 +75,11 @@ class StoreDetailViewController: UIViewController {
             make.centerX.centerY.equalTo(heroImageView)
         }
         
+    }
+    
+    override func viewDidLayoutSubviews() {
+        heroImageView.layer.cornerRadius = heroImageView.frame.width / 2
+        heroImageView.layer.masksToBounds = true
     }
     
     func configure(withViewModel viewModel: StoreDetailViewModel) {
