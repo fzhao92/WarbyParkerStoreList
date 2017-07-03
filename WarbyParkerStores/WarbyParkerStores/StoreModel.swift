@@ -36,20 +36,21 @@ struct StoreModel {
     let name: String
     let address: Address
     let cardPhotoUrl: String
-    let heroImageUrls: [String]
     let description: String
     let offersEyeExams: Bool
+    
+    var heroImageUrl: String?
     
     init(dict: JSON) {
         name = dict["name"].stringValue
         address = Address(dict: dict["address"])
         cardPhotoUrl = "https:" + dict["cms_content"]["card_photo"].stringValue
         
-        var urls = [String]()
-        for json in dict["cms_content"]["opening_soon"]["hero"]["images"].arrayValue {
-            urls.append(json["url"].stringValue)
+        for json in dict["cms_content"]["hero_image"].arrayValue {
+            if json["size"] == "small" {
+                heroImageUrl = "https:" + json["image"].stringValue
+            }
         }
-        heroImageUrls = urls
         
         description = dict["cms_content"]["description"].stringValue
         
