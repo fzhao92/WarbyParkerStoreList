@@ -12,7 +12,9 @@ class StoreListViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        APIClient.getListOfStores { (stores) in
+            print(stores)
+        }
     }
 
     override func didReceiveMemoryWarning() {

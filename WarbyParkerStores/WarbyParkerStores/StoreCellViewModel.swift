@@ -16,4 +16,6 @@ struct StoreCellViewModel {
         storeModel = model
     }
     
+    
+    
 }

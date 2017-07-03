@@ -32,11 +32,9 @@ enum WarbyParkerAPI: URLRequestConvertible {
     }
 }
 
-
 struct APIClient {
     
     static func getListOfStores(completion: @escaping ([StoreModel]?) -> Void) {
-        
         Alamofire.request(WarbyParkerAPI.StoreList).validate().responseJSON { (response) in
             
             switch response.result {
@@ -59,11 +57,9 @@ struct APIClient {
             }
             
         }
-        
     }
     
     func downloadImage(forUrl url: String, completion: @escaping (UIImage?) -> Void) {
-        
         Alamofire.request(url).validate().responseImage { (response) in
             
             switch response.result {
@@ -76,9 +72,7 @@ struct APIClient {
                 completion(nil)
             }
         }
-        
     }
-    
     
 }
 

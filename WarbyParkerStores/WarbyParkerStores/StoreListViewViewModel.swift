@@ -24,7 +24,12 @@ class StoreListViewViewModel {
     }
     
     func retrieveData() {
-        // - TODO: make api call to get stores
+        APIClient.getListOfStores { (storeList) in
+            if let storeList = storeList {
+                self.stores = storeList
+                self.reloadTableViewCallback()
+            }
+        }
     }
     
     func numberOfItemsInSection() -> Int {
