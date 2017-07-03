@@ -8,10 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		3F3BA62D1F09B84800E29319 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F3BA62C1F09B84800E29319 /* AppDelegate.swift */; };
-		3F3BA62F1F09B84800E29319 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F3BA62E1F09B84800E29319 /* ViewController.swift */; };
-		3F3BA6321F09B84800E29319 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F3BA6301F09B84800E29319 /* Main.storyboard */; };
+		3F3BA62F1F09B84800E29319 /* StoreListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F3BA62E1F09B84800E29319 /* StoreListViewController.swift */; };
 		3F3BA6341F09B84800E29319 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3F3BA6331F09B84800E29319 /* Assets.xcassets */; };
 		3F3BA6371F09B84800E29319 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F3BA6351F09B84800E29319 /* LaunchScreen.storyboard */; };
+		3F3BA63F1F09BBB700E29319 /* StoreModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F3BA63E1F09BBB700E29319 /* StoreModel.swift */; };
+		3FBE16221F09C12900B833A1 /* StoreListViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FBE16211F09C12900B833A1 /* StoreListViewViewModel.swift */; };
+		3FBE16241F09C24D00B833A1 /* StoreCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FBE16231F09C24D00B833A1 /* StoreCellViewModel.swift */; };
+		3FBE16261F09C29E00B833A1 /* StoreDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FBE16251F09C29E00B833A1 /* StoreDetailViewModel.swift */; };
+		3FBE16291F09C2E500B833A1 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FBE16281F09C2E500B833A1 /* APIClient.swift */; };
 		E39A1FBD8CDE3639D5F209E2 /* Pods_WarbyParkerStores.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BB69F95FA502E920C7EEFA40 /* Pods_WarbyParkerStores.framework */; };
 /* End PBXBuildFile section */
 
@@ -19,11 +23,15 @@
 		20C178F98B769996F7826CDC /* Pods-WarbyParkerStores.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WarbyParkerStores.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WarbyParkerStores/Pods-WarbyParkerStores.debug.xcconfig"; sourceTree = "<group>"; };
 		3F3BA6291F09B84700E29319 /* WarbyParkerStores.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WarbyParkerStores.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3F3BA62C1F09B84800E29319 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		3F3BA62E1F09B84800E29319 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		3F3BA6311F09B84800E29319 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		3F3BA62E1F09B84800E29319 /* StoreListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreListViewController.swift; sourceTree = "<group>"; };
 		3F3BA6331F09B84800E29319 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3F3BA6361F09B84800E29319 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3F3BA6381F09B84800E29319 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3F3BA63E1F09BBB700E29319 /* StoreModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoreModel.swift; sourceTree = "<group>"; };
+		3FBE16211F09C12900B833A1 /* StoreListViewViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoreListViewViewModel.swift; sourceTree = "<group>"; };
+		3FBE16231F09C24D00B833A1 /* StoreCellViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoreCellViewModel.swift; sourceTree = "<group>"; };
+		3FBE16251F09C29E00B833A1 /* StoreDetailViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoreDetailViewModel.swift; sourceTree = "<group>"; };
+		3FBE16281F09C2E500B833A1 /* APIClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
 		BB69F95FA502E920C7EEFA40 /* Pods_WarbyParkerStores.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WarbyParkerStores.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C3C12AAE9B74B211551B9406 /* Pods-WarbyParkerStores.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WarbyParkerStores.release.xcconfig"; path = "Pods/Target Support Files/Pods-WarbyParkerStores/Pods-WarbyParkerStores.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -61,14 +69,58 @@
 		3F3BA62B1F09B84700E29319 /* WarbyParkerStores */ = {
 			isa = PBXGroup;
 			children = (
-				3F3BA62C1F09B84800E29319 /* AppDelegate.swift */,
-				3F3BA62E1F09B84800E29319 /* ViewController.swift */,
-				3F3BA6301F09B84800E29319 /* Main.storyboard */,
+				3FBE16271F09C2D900B833A1 /* Networking */,
+				3FBE16201F09C0F200B833A1 /* View Models */,
+				3FBE161F1F09C0E700B833A1 /* AppDelegate */,
+				3FBE161E1F09C0DF00B833A1 /* View Controllers */,
 				3F3BA6331F09B84800E29319 /* Assets.xcassets */,
 				3F3BA6351F09B84800E29319 /* LaunchScreen.storyboard */,
 				3F3BA6381F09B84800E29319 /* Info.plist */,
+				3FBE161D1F09C0CF00B833A1 /* Models */,
 			);
 			path = WarbyParkerStores;
+			sourceTree = "<group>";
+		};
+		3FBE161D1F09C0CF00B833A1 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				3F3BA63E1F09BBB700E29319 /* StoreModel.swift */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		3FBE161E1F09C0DF00B833A1 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				3F3BA62E1F09B84800E29319 /* StoreListViewController.swift */,
+			);
+			name = "View Controllers";
+			sourceTree = "<group>";
+		};
+		3FBE161F1F09C0E700B833A1 /* AppDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				3F3BA62C1F09B84800E29319 /* AppDelegate.swift */,
+			);
+			name = AppDelegate;
+			sourceTree = "<group>";
+		};
+		3FBE16201F09C0F200B833A1 /* View Models */ = {
+			isa = PBXGroup;
+			children = (
+				3FBE16211F09C12900B833A1 /* StoreListViewViewModel.swift */,
+				3FBE16231F09C24D00B833A1 /* StoreCellViewModel.swift */,
+				3FBE16251F09C29E00B833A1 /* StoreDetailViewModel.swift */,
+			);
+			name = "View Models";
+			sourceTree = "<group>";
+		};
+		3FBE16271F09C2D900B833A1 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				3FBE16281F09C2E500B833A1 /* APIClient.swift */,
+			);
+			name = Networking;
 			sourceTree = "<group>";
 		};
 		BDD7193CF875C488D3FA98E9 /* Pods */ = {
@@ -153,7 +205,6 @@
 			files = (
 				3F3BA6371F09B84800E29319 /* LaunchScreen.storyboard in Resources */,
 				3F3BA6341F09B84800E29319 /* Assets.xcassets in Resources */,
-				3F3BA6321F09B84800E29319 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -212,22 +263,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3F3BA62F1F09B84800E29319 /* ViewController.swift in Sources */,
+				3F3BA63F1F09BBB700E29319 /* StoreModel.swift in Sources */,
+				3FBE16291F09C2E500B833A1 /* APIClient.swift in Sources */,
+				3FBE16241F09C24D00B833A1 /* StoreCellViewModel.swift in Sources */,
+				3F3BA62F1F09B84800E29319 /* StoreListViewController.swift in Sources */,
 				3F3BA62D1F09B84800E29319 /* AppDelegate.swift in Sources */,
+				3FBE16221F09C12900B833A1 /* StoreListViewViewModel.swift in Sources */,
+				3FBE16261F09C29E00B833A1 /* StoreDetailViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		3F3BA6301F09B84800E29319 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				3F3BA6311F09B84800E29319 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		3F3BA6351F09B84800E29319 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
